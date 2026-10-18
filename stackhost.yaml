@@ -10,4 +10,4 @@ port: 8000
 
 env:
   ADMIN_PASSWORD: admin
-  SECRET_KEY: "یه-رشته-تصادفی-طولانی"
+  SECRET_KEY: "a8f3c9e1b7d2405f6a1c8e3b9d7f2a4c6e8b1d3f5a7c9e2b4d6f8a1c3e5b7d9f"
