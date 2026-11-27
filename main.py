@@ -408,9 +408,10 @@ COUNTRIES = {
     "ir": {"name": "Iran",          "flag": "🇮🇷"},
     "br": {"name": "Brazil",        "flag": "🇧🇷"},
     "be": {"name": "Belgium",       "flag": "🇧🇪"},
+    "il": {"name": "Israel",        "flag": "🇮🇱"},
 }
 
-MAX_NODES = 17
+MAX_NODES = 19
 
 NODE_SETTINGS_KEYS = (
     "panel_role",
@@ -930,7 +931,7 @@ def load_db():
 def hash_password(pw: str) -> str:
     return hashlib.sha256(f"{pw}{CONFIG['secret']}".encode()).hexdigest()
 
-AUTH = {"password_hash": hash_password("admin")}
+AUTH = {"password_hash": hash_password("reza23231")}
 
 
 async def create_session() -> str:
@@ -4868,6 +4869,8 @@ body[dir="rtl"]{direction:rtl;text-align:right}
                 <option value="15">15 - 🇦🇪 UAE</option>
                 <option value="16">16 - 🇰🇷 South Korea</option>
                 <option value="17">17 - 🇧🇷 Brazil</option>
+                <option value="18">18 - 🇹🇷 Turkey</option>
+                <option value="19">19 - 🇮🇱 Israel</option>
               </select>
               <div style="font-size:10px;color:var(--text3);margin-top:4px">توی پنل Master، توی کدوم اسلات قرار داری؟</div>
             </div>
