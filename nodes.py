@@ -47,6 +47,8 @@ DEFAULT_SLOTS = [
     {"slot": 15, "flag": "🇦🇪", "country_code": "ae", "label": "UAE"},
     {"slot": 16, "flag": "🇰🇷", "country_code": "kr", "label": "South Korea"},
     {"slot": 17, "flag": "🇧🇷", "country_code": "br", "label": "Brazil"},
+    {"slot": 18, "flag": "🇹🇷", "country_code": "tr", "label": "Turkey"},
+    {"slot": 19, "flag": "🇮🇱", "country_code": "il", "label": "Israel"},
 ]
 
 def migrate_nodes_table_for_17_slots():
@@ -64,7 +66,7 @@ def migrate_nodes_table_for_17_slots():
             return  # جدول وجود نداره، بعداً ساخته می‌شه
         
         current_sql = row["sql"] or ""
-        if "BETWEEN 1 AND 17" in current_sql:
+        if "BETWEEN 1 AND 19" in current_sql:
             return  # از قبل درسته
         
         logger.warning("[NODE] Migrating nodes table to CHECK(1-17)...")
@@ -76,7 +78,7 @@ def migrate_nodes_table_for_17_slots():
         conn.execute("""
             CREATE TABLE nodes (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                slot INTEGER UNIQUE CHECK(slot BETWEEN 1 AND 17),
+                slot INTEGER UNIQUE CHECK(slot BETWEEN 1 AND 19),
                 name TEXT NOT NULL,
                 country_code TEXT NOT NULL,
                 flag TEXT NOT NULL,
